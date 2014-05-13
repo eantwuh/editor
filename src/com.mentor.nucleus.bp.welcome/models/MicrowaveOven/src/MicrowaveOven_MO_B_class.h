@@ -4,7 +4,7 @@
  * Class:       Beeper  (MO_B)
  * Component:   MicrowaveOven
  *
- * (C) Copyright 1998-2014 Mentor Graphics Corporation.  All rights reserved.
+ * your copyright statement can go here (from te_copyright.body)
  *--------------------------------------------------------------------------*/
 
 #ifndef MICROWAVEOVEN_MO_B_CLASS_H
@@ -27,7 +27,7 @@ struct MicrowaveOven_MO_B {
   Escher_xtUMLEvent_t * beeper_delay_over;  /* - beeper_delay_over */
 
   /* relationship storage */
-  MicrowaveOven_MO_O * MO_O_R3;
+  MicrowaveOven_MO_O * MO_O_R3_is_located_in;
 };
 
 

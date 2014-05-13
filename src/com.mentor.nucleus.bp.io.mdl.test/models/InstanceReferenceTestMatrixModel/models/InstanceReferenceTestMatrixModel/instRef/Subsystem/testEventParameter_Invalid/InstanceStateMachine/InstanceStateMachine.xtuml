@@ -1,4 +1,4 @@
--- BP 7.1 content: InstanceStateMachine syschar: 3 persistence-version: 7.1.5
+-- BP 7.1.6 content: InstanceStateMachine syschar: 3 persistence-version: 7.1.6
 
 INSERT INTO SM_ISM
 	VALUES ("bf6fb3cb-3b65-4861-bc2f-ee8b29fbd5c2",
@@ -20,7 +20,7 @@ INSERT INTO SM_EVTDI
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO S_DT_PROXY
 	VALUES ("cab818e3-8b6b-4844-ba65-2b5c63c3e5d4",
-	"c3928f56-530d-4984-8114-35933dc4cb31",
+	"00000000-0000-0000-0000-000000000000",
 	'inst_ref_set<vehicle>',
 	'',
 	'',
@@ -36,7 +36,7 @@ INSERT INTO SM_EVTDI
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO S_DT_PROXY
 	VALUES ("d4c5a13f-383d-4bca-8d5d-06c7eea7f5c9",
-	"c3928f56-530d-4984-8114-35933dc4cb31",
+	"00000000-0000-0000-0000-000000000000",
 	'inst_ref<vehicle>',
 	'',
 	'',
@@ -1758,13 +1758,15 @@ INSERT INTO GD_MD
 	200,
 	150,
 	0,
-	'3.2.3');
+	'3.2.3',
+	'InstanceReferenceTestMatrixModel::instRef::Subsystem::testEventParameter_Invalid::Instance State Machine');
 INSERT INTO GD_GE
 	VALUES ("936b8621-59d2-427e-a928-75854dbf7e0c",
 	"826998ed-3769-4acf-b3c9-b347dc1ab8be",
 	"d7698abd-c3d1-44f2-94dd-be77612d73a0",
 	42,
-	0);
+	0,
+	'InstanceReferenceTestMatrixModel::instRef::Subsystem::testEventParameter_Invalid::Instance State Machine::Start::EVTDI29: SM_EVTDI_writeAttr');
 INSERT INTO GD_CON
 	VALUES ("936b8621-59d2-427e-a928-75854dbf7e0c",
 	"00000000-0000-0000-0000-000000000000");
@@ -1863,7 +1865,8 @@ INSERT INTO GD_GE
 	"826998ed-3769-4acf-b3c9-b347dc1ab8be",
 	"9e6af1ca-9802-4583-a3ac-c4e9b38f69fe",
 	42,
-	0);
+	0,
+	'InstanceReferenceTestMatrixModel::instRef::Subsystem::testEventParameter_Invalid::Instance State Machine::Start::EVTDI28: SM_EVTDI_WhereClause');
 INSERT INTO GD_CON
 	VALUES ("90300b6c-1231-472e-a93a-69b78b67f73b",
 	"00000000-0000-0000-0000-000000000000");
@@ -1962,7 +1965,8 @@ INSERT INTO GD_GE
 	"826998ed-3769-4acf-b3c9-b347dc1ab8be",
 	"a0141f8f-1859-4d1f-8bef-5a9ba071784c",
 	42,
-	0);
+	0,
+	'InstanceReferenceTestMatrixModel::instRef::Subsystem::testEventParameter_Invalid::Instance State Machine::Start::EVTDI27: SM_EVTDI_readAttr');
 INSERT INTO GD_CON
 	VALUES ("0f72d7ec-bc34-424b-8563-6edc2d9b1db5",
 	"00000000-0000-0000-0000-000000000000");
@@ -2061,7 +2065,8 @@ INSERT INTO GD_GE
 	"826998ed-3769-4acf-b3c9-b347dc1ab8be",
 	"c1d7dd3b-0eb1-4d3c-886a-ed53c324a993",
 	42,
-	0);
+	0,
+	'InstanceReferenceTestMatrixModel::instRef::Subsystem::testEventParameter_Invalid::Instance State Machine::Start::EVTDI26: SM_EVTDI_booleanBinaryOperationRightOperandSet');
 INSERT INTO GD_CON
 	VALUES ("842ad22c-2b76-4423-8a82-1ed530ba74be",
 	"00000000-0000-0000-0000-000000000000");
@@ -2160,7 +2165,8 @@ INSERT INTO GD_GE
 	"826998ed-3769-4acf-b3c9-b347dc1ab8be",
 	"3fe4dd6a-1997-49a4-a44d-8dd5a0185923",
 	42,
-	0);
+	0,
+	'InstanceReferenceTestMatrixModel::instRef::Subsystem::testEventParameter_Invalid::Instance State Machine::Start::EVTDI25: SM_EVTDI_booleanBinaryOperationRightOperand');
 INSERT INTO GD_CON
 	VALUES ("ec01390a-5367-4c7c-b4de-9a648b25e105",
 	"00000000-0000-0000-0000-000000000000");
@@ -2259,7 +2265,8 @@ INSERT INTO GD_GE
 	"826998ed-3769-4acf-b3c9-b347dc1ab8be",
 	"af6c43e6-88b9-4243-8a75-d2f534b4e3d3",
 	42,
-	0);
+	0,
+	'InstanceReferenceTestMatrixModel::instRef::Subsystem::testEventParameter_Invalid::Instance State Machine::Start::EVTDI24: SM_EVTDI_booleanBinaryOperationLeftOperandSet');
 INSERT INTO GD_CON
 	VALUES ("274db7e0-b369-4378-8512-6b86cae60f04",
 	"00000000-0000-0000-0000-000000000000");
@@ -2358,7 +2365,8 @@ INSERT INTO GD_GE
 	"826998ed-3769-4acf-b3c9-b347dc1ab8be",
 	"9ea5b87f-a7fa-4d4a-a181-e5dd9869aefb",
 	42,
-	0);
+	0,
+	'InstanceReferenceTestMatrixModel::instRef::Subsystem::testEventParameter_Invalid::Instance State Machine::Start::EVTDI23: SM_EVTDI_booleanBinaryOperationLeftOperand');
 INSERT INTO GD_CON
 	VALUES ("c6516042-90c6-4046-92fb-8b4deed5bcb8",
 	"00000000-0000-0000-0000-000000000000");
@@ -2457,7 +2465,8 @@ INSERT INTO GD_GE
 	"826998ed-3769-4acf-b3c9-b347dc1ab8be",
 	"f954c0d5-eb18-4460-9f17-cf4e9d5fe68a",
 	42,
-	0);
+	0,
+	'InstanceReferenceTestMatrixModel::instRef::Subsystem::testEventParameter_Invalid::Instance State Machine::Start::EVTDI22: SM_EVTDI_ActivitiesInvocationSet');
 INSERT INTO GD_CON
 	VALUES ("a61b4c9b-01a9-4664-92d7-09db71fb91fc",
 	"00000000-0000-0000-0000-000000000000");
@@ -2556,7 +2565,8 @@ INSERT INTO GD_GE
 	"826998ed-3769-4acf-b3c9-b347dc1ab8be",
 	"e1f8dbf2-7ef4-44f1-92b2-83925b483b90",
 	42,
-	0);
+	0,
+	'InstanceReferenceTestMatrixModel::instRef::Subsystem::testEventParameter_Invalid::Instance State Machine::Start::EVTDI21: SM_EVTDI_ActivitiesInvocation');
 INSERT INTO GD_CON
 	VALUES ("41e94788-4ea1-41a3-9810-71aadf1ec331",
 	"00000000-0000-0000-0000-000000000000");
@@ -2655,7 +2665,8 @@ INSERT INTO GD_GE
 	"826998ed-3769-4acf-b3c9-b347dc1ab8be",
 	"4281eb06-b4a1-4750-86b5-49d71813fc98",
 	41,
-	0);
+	0,
+	'InstanceReferenceTestMatrixModel::instRef::Subsystem::testEventParameter_Invalid::Instance State Machine::booleanBinaryOperationLeftOperand');
 INSERT INTO GD_SHP
 	VALUES ("91127e3a-e09b-4298-9561-4315eec787a3");
 INSERT INTO GD_NCS
@@ -2688,7 +2699,8 @@ INSERT INTO GD_GE
 	"826998ed-3769-4acf-b3c9-b347dc1ab8be",
 	"5ab7f29e-5807-4114-ac59-377d13f545aa",
 	41,
-	0);
+	0,
+	'InstanceReferenceTestMatrixModel::instRef::Subsystem::testEventParameter_Invalid::Instance State Machine::ActivitiesInvocationSet');
 INSERT INTO GD_SHP
 	VALUES ("dc8912ce-1390-47aa-9208-e2021289f7d2");
 INSERT INTO GD_NCS
@@ -2721,7 +2733,8 @@ INSERT INTO GD_GE
 	"826998ed-3769-4acf-b3c9-b347dc1ab8be",
 	"e7e4424a-dc02-4c78-b32c-e5a6ac1d9e24",
 	41,
-	0);
+	0,
+	'InstanceReferenceTestMatrixModel::instRef::Subsystem::testEventParameter_Invalid::Instance State Machine::ActivitiesInvocation');
 INSERT INTO GD_SHP
 	VALUES ("53369d6a-3ed4-4811-ba70-1d04681f7333");
 INSERT INTO GD_NCS
@@ -2754,7 +2767,8 @@ INSERT INTO GD_GE
 	"826998ed-3769-4acf-b3c9-b347dc1ab8be",
 	"4b7e2a28-a3e9-488e-aaa4-e98b91a29e5e",
 	41,
-	0);
+	0,
+	'InstanceReferenceTestMatrixModel::instRef::Subsystem::testEventParameter_Invalid::Instance State Machine::writeAttr');
 INSERT INTO GD_SHP
 	VALUES ("786ff920-5fa5-4615-af7e-279df7e24664");
 INSERT INTO GD_NCS
@@ -2787,7 +2801,8 @@ INSERT INTO GD_GE
 	"826998ed-3769-4acf-b3c9-b347dc1ab8be",
 	"984936f8-9258-4719-8ede-d45dd3cf3b95",
 	41,
-	0);
+	0,
+	'InstanceReferenceTestMatrixModel::instRef::Subsystem::testEventParameter_Invalid::Instance State Machine::WhereClause');
 INSERT INTO GD_SHP
 	VALUES ("3294a00f-7236-4ae9-a04a-a31151450f39");
 INSERT INTO GD_NCS
@@ -2820,7 +2835,8 @@ INSERT INTO GD_GE
 	"826998ed-3769-4acf-b3c9-b347dc1ab8be",
 	"8e127394-2daf-4e9f-ae33-cbb352db8cd9",
 	41,
-	0);
+	0,
+	'InstanceReferenceTestMatrixModel::instRef::Subsystem::testEventParameter_Invalid::Instance State Machine::readAttr');
 INSERT INTO GD_SHP
 	VALUES ("807077d7-288a-4e82-8c05-218bda30d05f");
 INSERT INTO GD_NCS
@@ -2853,7 +2869,8 @@ INSERT INTO GD_GE
 	"826998ed-3769-4acf-b3c9-b347dc1ab8be",
 	"4390d4b6-78e9-4f50-8bce-9b2af4549d33",
 	41,
-	0);
+	0,
+	'InstanceReferenceTestMatrixModel::instRef::Subsystem::testEventParameter_Invalid::Instance State Machine::booleanBinaryOperationRightOperandSet');
 INSERT INTO GD_SHP
 	VALUES ("42948c92-7033-4124-9947-c586ac55dadb");
 INSERT INTO GD_NCS
@@ -2886,7 +2903,8 @@ INSERT INTO GD_GE
 	"826998ed-3769-4acf-b3c9-b347dc1ab8be",
 	"b1c7adb0-c024-4647-ba81-6fd5407b83a4",
 	41,
-	0);
+	0,
+	'InstanceReferenceTestMatrixModel::instRef::Subsystem::testEventParameter_Invalid::Instance State Machine::booleanBinaryOperationRightOperand');
 INSERT INTO GD_SHP
 	VALUES ("929b0ce0-4c64-4f5f-9ce2-c2a255c8bb57");
 INSERT INTO GD_NCS
@@ -2919,7 +2937,8 @@ INSERT INTO GD_GE
 	"826998ed-3769-4acf-b3c9-b347dc1ab8be",
 	"d2c5a52a-5b51-478b-8bc8-d374cabe1000",
 	41,
-	0);
+	0,
+	'InstanceReferenceTestMatrixModel::instRef::Subsystem::testEventParameter_Invalid::Instance State Machine::booleanBinaryOperationLeftOperandSet');
 INSERT INTO GD_SHP
 	VALUES ("4ad523df-0422-40bc-b61e-4c8c7b6f1903");
 INSERT INTO GD_NCS
@@ -2952,7 +2971,8 @@ INSERT INTO GD_GE
 	"826998ed-3769-4acf-b3c9-b347dc1ab8be",
 	"ec41d416-ac3f-498b-a7f3-71f91a3d4e26",
 	41,
-	0);
+	0,
+	'InstanceReferenceTestMatrixModel::instRef::Subsystem::testEventParameter_Invalid::Instance State Machine::Start');
 INSERT INTO GD_SHP
 	VALUES ("cf3e491d-cf43-4bf6-b1f2-de1ef7f912ad");
 INSERT INTO GD_NCS
@@ -3078,5 +3098,5 @@ INSERT INTO O_OBJ_PROXY
 	17,
 	'EVTDI2',
 	'',
-	"b8c699da-971a-421b-be92-50dd3d41b58b",
+	"00000000-0000-0000-0000-000000000000",
 	'../testEventParameter_Invalid.xtuml');

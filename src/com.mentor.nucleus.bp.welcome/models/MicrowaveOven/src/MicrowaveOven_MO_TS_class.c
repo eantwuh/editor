@@ -4,12 +4,12 @@
  * Class:       Test Sequences  (MO_TS)
  * Component:   MicrowaveOven
  *
- * (C) Copyright 1998-2014 Mentor Graphics Corporation.  All rights reserved.
+ * your copyright statement can go here (from te_copyright.body)
  *--------------------------------------------------------------------------*/
 
 #include "MicrowaveOven_sys_types.h"
-#include "TIM_bridge.h"
 #include "MicrowaveOven_ARCH_bridge.h"
+#include "TIM_bridge.h"
 #include "MicrowaveOven_classes.h"
 
 
@@ -54,14 +54,14 @@ static void MicrowaveOven_MO_TS_act2( MicrowaveOven_MO_TS *, const Escher_xtUMLE
 static void
 MicrowaveOven_MO_TS_act2( MicrowaveOven_MO_TS * self, const Escher_xtUMLEvent_t * const event )
 {
-  MicrowaveOven_MO_D * door; MicrowaveOven_MO_MT * tube; MicrowaveOven_MO_O * oven; Escher_xtUMLEvent_t * finished;  /* finished */ Escher_Timer_t * terminate_timer; 
+  Escher_Timer_t * terminate_timer;Escher_xtUMLEvent_t * finished;MicrowaveOven_MO_O * oven=0;MicrowaveOven_MO_MT * tube=0;MicrowaveOven_MO_D * door=0;
   /* SELECT any door FROM INSTANCES OF MO_D */
   XTUML_OAL_STMT_TRACE( 1, "SELECT any door FROM INSTANCES OF MO_D" );
   door = (MicrowaveOven_MO_D *) Escher_SetGetAny( &pG_MicrowaveOven_MO_D_extent.active );
   /* IF ( not_empty door ) */
   XTUML_OAL_STMT_TRACE( 1, "IF ( not_empty door )" );
   if ( ( 0 != door ) ) {
-    Escher_xtUMLEvent_t * release_door;  /* release_door */ Escher_Timer_t * step1_timer; 
+    Escher_Timer_t * step1_timer;Escher_xtUMLEvent_t * release_door;
     /* CREATE EVENT INSTANCE release_door(  ) TO door */
     XTUML_OAL_STMT_TRACE( 2, "CREATE EVENT INSTANCE release_door(  ) TO door" );
     release_door = Escher_NewxtUMLEvent( (void *) door, &MicrowaveOven_MO_Devent1c );
@@ -75,7 +75,7 @@ MicrowaveOven_MO_TS_act2( MicrowaveOven_MO_TS * self, const Escher_xtUMLEvent_t 
   /* IF ( not_empty tube ) */
   XTUML_OAL_STMT_TRACE( 1, "IF ( not_empty tube )" );
   if ( ( 0 != tube ) ) {
-    Escher_xtUMLEvent_t * lower_power;  /* lower_power */ Escher_Timer_t * step2_timer; 
+    Escher_Timer_t * step2_timer;Escher_xtUMLEvent_t * lower_power;
     /* CREATE EVENT INSTANCE lower_power(  ) TO tube */
     XTUML_OAL_STMT_TRACE( 2, "CREATE EVENT INSTANCE lower_power(  ) TO tube" );
     lower_power = Escher_NewxtUMLEvent( (void *) tube, &MicrowaveOven_MO_MTevent2c );
@@ -89,7 +89,7 @@ MicrowaveOven_MO_TS_act2( MicrowaveOven_MO_TS * self, const Escher_xtUMLEvent_t 
   /* IF ( not_empty door ) */
   XTUML_OAL_STMT_TRACE( 1, "IF ( not_empty door )" );
   if ( ( 0 != door ) ) {
-    Escher_xtUMLEvent_t * close_door;  /* close_door */ Escher_Timer_t * step3_timer; 
+    Escher_Timer_t * step3_timer;Escher_xtUMLEvent_t * close_door;
     /* CREATE EVENT INSTANCE close_door(  ) TO door */
     XTUML_OAL_STMT_TRACE( 2, "CREATE EVENT INSTANCE close_door(  ) TO door" );
     close_door = Escher_NewxtUMLEvent( (void *) door, &MicrowaveOven_MO_Devent2c );
@@ -103,7 +103,7 @@ MicrowaveOven_MO_TS_act2( MicrowaveOven_MO_TS * self, const Escher_xtUMLEvent_t 
   /* IF ( not_empty oven ) */
   XTUML_OAL_STMT_TRACE( 1, "IF ( not_empty oven )" );
   if ( ( 0 != oven ) ) {
-    MicrowaveOven_MO_Oevent8 * cooking_time;  /* cooking_time */ Escher_Timer_t * step4a_timer; Escher_xtUMLEvent_t * start;  /* start */ Escher_Timer_t * step4b_timer; 
+    Escher_Timer_t * step4b_timer;Escher_Timer_t * step4a_timer;Escher_xtUMLEvent_t * start;MicrowaveOven_MO_Oevent8 * cooking_time;
     /* CREATE EVENT INSTANCE cooking_time( period:10000000 ) TO oven */
     XTUML_OAL_STMT_TRACE( 2, "CREATE EVENT INSTANCE cooking_time( period:10000000 ) TO oven" );
     cooking_time = (MicrowaveOven_MO_Oevent8 *) Escher_NewxtUMLEvent( (void *) oven, &MicrowaveOven_MO_Oevent8c );
@@ -123,7 +123,7 @@ MicrowaveOven_MO_TS_act2( MicrowaveOven_MO_TS * self, const Escher_xtUMLEvent_t 
   /* IF ( not_empty door ) */
   XTUML_OAL_STMT_TRACE( 1, "IF ( not_empty door )" );
   if ( ( 0 != door ) ) {
-    Escher_xtUMLEvent_t * release_door;  /* release_door */ Escher_Timer_t * step5_timer; 
+    Escher_Timer_t * step5_timer;Escher_xtUMLEvent_t * release_door;
     /* CREATE EVENT INSTANCE release_door(  ) TO door */
     XTUML_OAL_STMT_TRACE( 2, "CREATE EVENT INSTANCE release_door(  ) TO door" );
     release_door = Escher_NewxtUMLEvent( (void *) door, &MicrowaveOven_MO_Devent1c );
@@ -146,14 +146,14 @@ static void MicrowaveOven_MO_TS_act3( MicrowaveOven_MO_TS *, const Escher_xtUMLE
 static void
 MicrowaveOven_MO_TS_act3( MicrowaveOven_MO_TS * self, const Escher_xtUMLEvent_t * const event )
 {
-  MicrowaveOven_MO_D * door; MicrowaveOven_MO_O * oven; MicrowaveOven_MO_MT * tube; Escher_xtUMLEvent_t * finished;  /* finished */ Escher_Timer_t * terminate_timer; 
+  Escher_Timer_t * terminate_timer;Escher_xtUMLEvent_t * finished;MicrowaveOven_MO_MT * tube=0;MicrowaveOven_MO_O * oven=0;MicrowaveOven_MO_D * door=0;
   /* SELECT any door FROM INSTANCES OF MO_D */
   XTUML_OAL_STMT_TRACE( 1, "SELECT any door FROM INSTANCES OF MO_D" );
   door = (MicrowaveOven_MO_D *) Escher_SetGetAny( &pG_MicrowaveOven_MO_D_extent.active );
   /* IF ( not_empty door ) */
   XTUML_OAL_STMT_TRACE( 1, "IF ( not_empty door )" );
   if ( ( 0 != door ) ) {
-    Escher_xtUMLEvent_t * release_door;  /* release_door */ Escher_Timer_t * step1_timer; 
+    Escher_Timer_t * step1_timer;Escher_xtUMLEvent_t * release_door;
     /* CREATE EVENT INSTANCE release_door(  ) TO door */
     XTUML_OAL_STMT_TRACE( 2, "CREATE EVENT INSTANCE release_door(  ) TO door" );
     release_door = Escher_NewxtUMLEvent( (void *) door, &MicrowaveOven_MO_Devent1c );
@@ -167,7 +167,7 @@ MicrowaveOven_MO_TS_act3( MicrowaveOven_MO_TS * self, const Escher_xtUMLEvent_t 
   /* IF ( not_empty door ) */
   XTUML_OAL_STMT_TRACE( 1, "IF ( not_empty door )" );
   if ( ( 0 != door ) ) {
-    Escher_xtUMLEvent_t * close_door;  /* close_door */ Escher_Timer_t * step2_timer; 
+    Escher_Timer_t * step2_timer;Escher_xtUMLEvent_t * close_door;
     /* CREATE EVENT INSTANCE close_door(  ) TO door */
     XTUML_OAL_STMT_TRACE( 2, "CREATE EVENT INSTANCE close_door(  ) TO door" );
     close_door = Escher_NewxtUMLEvent( (void *) door, &MicrowaveOven_MO_Devent2c );
@@ -181,7 +181,7 @@ MicrowaveOven_MO_TS_act3( MicrowaveOven_MO_TS * self, const Escher_xtUMLEvent_t 
   /* IF ( not_empty oven ) */
   XTUML_OAL_STMT_TRACE( 1, "IF ( not_empty oven )" );
   if ( ( 0 != oven ) ) {
-    MicrowaveOven_MO_Oevent8 * cooking_time;  /* cooking_time */ Escher_Timer_t * step3a_timer; Escher_xtUMLEvent_t * start;  /* start */ Escher_Timer_t * step3b_timer; 
+    Escher_Timer_t * step3b_timer;Escher_Timer_t * step3a_timer;Escher_xtUMLEvent_t * start;MicrowaveOven_MO_Oevent8 * cooking_time;
     /* CREATE EVENT INSTANCE cooking_time( period:15000000 ) TO oven */
     XTUML_OAL_STMT_TRACE( 2, "CREATE EVENT INSTANCE cooking_time( period:15000000 ) TO oven" );
     cooking_time = (MicrowaveOven_MO_Oevent8 *) Escher_NewxtUMLEvent( (void *) oven, &MicrowaveOven_MO_Oevent8c );
@@ -201,7 +201,7 @@ MicrowaveOven_MO_TS_act3( MicrowaveOven_MO_TS * self, const Escher_xtUMLEvent_t 
   /* IF ( not_empty door ) */
   XTUML_OAL_STMT_TRACE( 1, "IF ( not_empty door )" );
   if ( ( 0 != door ) ) {
-    Escher_xtUMLEvent_t * release_door;  /* release_door */ Escher_Timer_t * step4_timer; 
+    Escher_Timer_t * step4_timer;Escher_xtUMLEvent_t * release_door;
     /* CREATE EVENT INSTANCE release_door(  ) TO door */
     XTUML_OAL_STMT_TRACE( 2, "CREATE EVENT INSTANCE release_door(  ) TO door" );
     release_door = Escher_NewxtUMLEvent( (void *) door, &MicrowaveOven_MO_Devent1c );
@@ -215,7 +215,7 @@ MicrowaveOven_MO_TS_act3( MicrowaveOven_MO_TS * self, const Escher_xtUMLEvent_t 
   /* IF ( not_empty tube ) */
   XTUML_OAL_STMT_TRACE( 1, "IF ( not_empty tube )" );
   if ( ( 0 != tube ) ) {
-    Escher_xtUMLEvent_t * lower_power;  /* lower_power */ Escher_Timer_t * step5a_timer; Escher_Timer_t * step5b_timer; 
+    Escher_Timer_t * step5b_timer;Escher_Timer_t * step5a_timer;Escher_xtUMLEvent_t * lower_power;
     /* CREATE EVENT INSTANCE lower_power(  ) TO tube */
     XTUML_OAL_STMT_TRACE( 2, "CREATE EVENT INSTANCE lower_power(  ) TO tube" );
     lower_power = Escher_NewxtUMLEvent( (void *) tube, &MicrowaveOven_MO_MTevent2c );
@@ -232,7 +232,7 @@ MicrowaveOven_MO_TS_act3( MicrowaveOven_MO_TS * self, const Escher_xtUMLEvent_t 
   /* IF ( not_empty door ) */
   XTUML_OAL_STMT_TRACE( 1, "IF ( not_empty door )" );
   if ( ( 0 != door ) ) {
-    Escher_xtUMLEvent_t * close_door;  /* close_door */ Escher_Timer_t * step6_timer; 
+    Escher_Timer_t * step6_timer;Escher_xtUMLEvent_t * close_door;
     /* CREATE EVENT INSTANCE close_door(  ) TO door */
     XTUML_OAL_STMT_TRACE( 2, "CREATE EVENT INSTANCE close_door(  ) TO door" );
     close_door = Escher_NewxtUMLEvent( (void *) door, &MicrowaveOven_MO_Devent2c );
@@ -246,7 +246,7 @@ MicrowaveOven_MO_TS_act3( MicrowaveOven_MO_TS * self, const Escher_xtUMLEvent_t 
   /* IF ( not_empty oven ) */
   XTUML_OAL_STMT_TRACE( 1, "IF ( not_empty oven )" );
   if ( ( 0 != oven ) ) {
-    Escher_xtUMLEvent_t * restart;  /* restart */ Escher_Timer_t * step7_timer; 
+    Escher_Timer_t * step7_timer;Escher_xtUMLEvent_t * restart;
     /* CREATE EVENT INSTANCE restart(  ) TO oven */
     XTUML_OAL_STMT_TRACE( 2, "CREATE EVENT INSTANCE restart(  ) TO oven" );
     restart = Escher_NewxtUMLEvent( (void *) oven, &MicrowaveOven_MO_Oevent3c );

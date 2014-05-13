@@ -4,12 +4,12 @@
  * Class:       Door  (MO_D)
  * Component:   MicrowaveOven
  *
- * (C) Copyright 1998-2014 Mentor Graphics Corporation.  All rights reserved.
+ * your copyright statement can go here (from te_copyright.body)
  *--------------------------------------------------------------------------*/
 
 #include "MicrowaveOven_sys_types.h"
-#include "TIM_bridge.h"
 #include "MicrowaveOven_ARCH_bridge.h"
+#include "TIM_bridge.h"
 #include "MicrowaveOven_classes.h"
 
 
@@ -40,14 +40,13 @@ static void MicrowaveOven_MO_D_act1( MicrowaveOven_MO_D *, const Escher_xtUMLEve
 static void
 MicrowaveOven_MO_D_act1( MicrowaveOven_MO_D * self, const Escher_xtUMLEvent_t * const event )
 {
-  MicrowaveOven_MO_O * oven = 0; /* oven (MO_O) */
- 
+  MicrowaveOven_MO_O * oven=0;
   /* ASSIGN self.is_secure = FALSE */
   XTUML_OAL_STMT_TRACE( 1, "ASSIGN self.is_secure = FALSE" );
   self->is_secure = FALSE;
   /* SELECT one oven RELATED BY self->MO_O[R4] */
   XTUML_OAL_STMT_TRACE( 1, "SELECT one oven RELATED BY self->MO_O[R4]" );
-  oven = self->MO_O_R4;
+  oven = ( 0 != self ) ? self->MO_O_R4_provides_access_to : 0;
   /* GENERATE MO_O4:cancel_cooking() TO oven */
   XTUML_OAL_STMT_TRACE( 1, "GENERATE MO_O4:cancel_cooking() TO oven" );
   { Escher_xtUMLEvent_t * e = Escher_NewxtUMLEvent( oven, &MicrowaveOven_MO_Oevent4c );

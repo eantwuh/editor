@@ -4,7 +4,7 @@
  * Class:       Door  (MO_D)
  * Component:   MicrowaveOven
  *
- * (C) Copyright 1998-2014 Mentor Graphics Corporation.  All rights reserved.
+ * your copyright statement can go here (from te_copyright.body)
  *--------------------------------------------------------------------------*/
 
 #ifndef MICROWAVEOVEN_MO_D_CLASS_H
@@ -25,7 +25,7 @@ struct MicrowaveOven_MO_D {
   bool is_secure;  /* - is_secure */
 
   /* relationship storage */
-  MicrowaveOven_MO_O * MO_O_R4;
+  MicrowaveOven_MO_O * MO_O_R4_provides_access_to;
 };
 
 

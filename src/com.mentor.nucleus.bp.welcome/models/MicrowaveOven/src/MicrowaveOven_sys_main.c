@@ -2,7 +2,7 @@
  * File:  MicrowaveOven_sys_main.c
  *
  * Description:  main, system initialization (and idle loop)
- * (C) Copyright 1998-2014 Mentor Graphics Corporation.  All rights reserved.
+ * your copyright statement can go here (from te_copyright.body)
  *--------------------------------------------------------------------------*/
 
 #include "MicrowaveOven_sys_types.h"
@@ -39,7 +39,7 @@ static void ApplicationLevelInitialization( void )
  *
  */
 int
-main ( int argc, char ** argv )
+main( int argc, char ** argv )
 {
   UserInitializationCallout();
   Escher_SetFactoryInit( SYS_MAX_CONTAINERS );

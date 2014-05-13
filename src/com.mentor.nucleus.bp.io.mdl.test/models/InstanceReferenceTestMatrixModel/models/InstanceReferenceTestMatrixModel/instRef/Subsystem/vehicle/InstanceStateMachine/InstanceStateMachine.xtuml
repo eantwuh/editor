@@ -1,4 +1,4 @@
--- BP 7.1 content: InstanceStateMachine syschar: 3 persistence-version: 7.1.5
+-- BP 7.1.6 content: InstanceStateMachine syschar: 3 persistence-version: 7.1.6
 
 INSERT INTO SM_ISM
 	VALUES ("9173f25b-1501-431f-9776-a444a629404f",
@@ -124,13 +124,15 @@ INSERT INTO GD_MD
 	200,
 	150,
 	0,
-	'3.1.5');
+	'3.1.5',
+	'InstanceReferenceTestMatrixModel::instRef::Subsystem::vehicle::Instance State Machine');
 INSERT INTO GD_GE
 	VALUES ("3517c7d4-1227-45e8-b007-2a9a4496296c",
 	"9299951d-c4ab-4126-956d-9fe4d22ea816",
 	"fecbf783-a720-4c4b-9d89-cfaa6123b363",
 	41,
-	0);
+	0,
+	'InstanceReferenceTestMatrixModel::instRef::Subsystem::vehicle::Instance State Machine::stopping');
 INSERT INTO GD_SHP
 	VALUES ("3517c7d4-1227-45e8-b007-2a9a4496296c");
 INSERT INTO GD_NCS
@@ -158,7 +160,8 @@ INSERT INTO GD_GE
 	"9299951d-c4ab-4126-956d-9fe4d22ea816",
 	"eb9bc64b-19b9-4ca8-9e65-b905d06ae80b",
 	41,
-	0);
+	0,
+	'InstanceReferenceTestMatrixModel::instRef::Subsystem::vehicle::Instance State Machine::moving');
 INSERT INTO GD_SHP
 	VALUES ("1fe89ba1-79a8-4481-b614-d3f649ccf034");
 INSERT INTO GD_NCS
@@ -186,7 +189,8 @@ INSERT INTO GD_GE
 	"9299951d-c4ab-4126-956d-9fe4d22ea816",
 	"6d9bda9d-a9f8-44de-95c5-20a08d799d63",
 	42,
-	0);
+	0,
+	'InstanceReferenceTestMatrixModel::instRef::Subsystem::vehicle::Instance State Machine::stopping::V1: accelerate');
 INSERT INTO GD_CON
 	VALUES ("2130d9d9-0455-4eea-8421-b48bd8f7d544",
 	"00000000-0000-0000-0000-000000000000");
@@ -293,5 +297,5 @@ INSERT INTO O_OBJ_PROXY
 	2,
 	'V',
 	'',
-	"b8c699da-971a-421b-be92-50dd3d41b58b",
+	"00000000-0000-0000-0000-000000000000",
 	'../vehicle.xtuml');

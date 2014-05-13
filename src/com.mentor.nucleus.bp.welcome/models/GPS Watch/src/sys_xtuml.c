@@ -6,10 +6,10 @@
  *--------------------------------------------------------------------------*/
 
 #include "GPSWatch_sys_types.h"
-#include "HeartRateMonitor_classes.h"
-#include "Location_classes.h"
-#include "Tracking_classes.h"
 #include "UI_classes.h"
+#include "Tracking_classes.h"
+#include "Location_classes.h"
+#include "HeartRateMonitor_classes.h"
 
 
 /*
@@ -305,11 +305,13 @@ Escher_strcpy( c_t * dst, const c_t * src )
 {
   c_t * s = dst;
   s2_t i = ESCHER_SYS_MAX_STRING_LEN - 1;
-  while ( ( i > 0 ) && ( *src != '\0' ) ) {
-    --i;
-    *dst++ = *src++;
+  if ( ( 0 != src ) && ( 0 != dst ) ) {
+    while ( ( i > 0 ) && ( *src != '\0' ) ) {
+      --i;
+      *dst++ = *src++;
+    }
+    *dst = '\0';  /* Ensure delimiter.  */
   }
-  *dst = '\0';  /* Ensure delimiter.  */
   return s;
 }
 
@@ -363,8 +365,9 @@ c_t *
 Escher_strget( void )
 {
   static u1_t i = 0;
-  static c_t s[ 4 ][ ESCHER_SYS_MAX_STRING_LEN ];
-  i = ( i + 1 ) % 4;
+  static c_t s[ 16 ][ ESCHER_SYS_MAX_STRING_LEN ];
+  i = ( i + 1 ) % 16;
+  s[ i ][ 0 ] = 0;
   return ( &s[ i ][ 0 ] );
 }
 
@@ -398,7 +401,9 @@ Escher_CreateInstance(
 
   dci->inactive.head = dci->inactive.head->next;
   instance = (Escher_iHandle_t) node->object;
-  instance->current_state = dci->initial_state;
+  if ( 0 != dci->initial_state ) {
+    instance->current_state = dci->initial_state;
+  }
   Escher_SetInsertInstance( &dci->active, node );
   return instance;
 }
@@ -435,7 +440,7 @@ Escher_ClassFactoryInit(
   Escher_Extent_t * dci = *(domain_class_info[ domain_num ] + class_num);
   if ( 0 != dci ) {
   dci->active.head = 0;
-  dci->inactive.head = Escher_SetInsertBlock( 
+  dci->inactive.head = Escher_SetInsertBlock(
     dci->container,
     (const u1_t *) dci->pool,
     dci->size,
@@ -500,7 +505,7 @@ InitializeOoaEventPool( void )
 Escher_xtUMLEvent_t * Escher_AllocatextUMLEvent( void )
 {
   Escher_xtUMLEvent_t * event = 0;
-  if ( free_event_list == 0 ) {
+  if ( 0 == free_event_list ) {
     UserEventFreeListEmptyCallout();   /* Bad news!  No more events.  */
   } else {
     event = free_event_list;       /* Grab front of the free list.  */
@@ -663,7 +668,7 @@ static void ooa_loop( void )
       HeartRateMonitor_EventDispatcher,
       Location_EventDispatcher,
       Tracking_EventDispatcher,
-      UI_EventDispatcher,
+      UI_EventDispatcher
     };
   Escher_xtUMLEvent_t * event;
   /* Start consuming events and dispatching background processes.  */

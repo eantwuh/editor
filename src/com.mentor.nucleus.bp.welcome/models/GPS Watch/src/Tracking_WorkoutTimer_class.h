@@ -25,13 +25,11 @@ struct Tracking_WorkoutTimer {
   Escher_Timer_t * timer;  /* - timer */
 
   /* relationship storage */
-  Tracking_TrackLog * TrackLog_R4;
+  Tracking_TrackLog * TrackLog_R4_provides_high_resolution_data_for;
 };
 void Tracking_WorkoutTimer_op_activate( Tracking_WorkoutTimer * );
 void Tracking_WorkoutTimer_op_deactivate( Tracking_WorkoutTimer * );
 
-void Tracking_WorkoutTimer_R4_Link( Tracking_TrackLog *, Tracking_WorkoutTimer * );
-void Tracking_WorkoutTimer_R4_Unlink( Tracking_TrackLog *, Tracking_WorkoutTimer * );
 
 
 #define Tracking_WorkoutTimer_MAX_EXTENT_SIZE 200

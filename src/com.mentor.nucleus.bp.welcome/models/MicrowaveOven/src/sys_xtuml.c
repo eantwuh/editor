@@ -2,7 +2,7 @@
  * File:  sys_xtuml.c
  *
  * Description:
- * (C) Copyright 1998-2014 Mentor Graphics Corporation.  All rights reserved.
+ * your copyright statement can go here (from te_copyright.body)
  *--------------------------------------------------------------------------*/
 
 #include "MicrowaveOven_sys_types.h"
@@ -233,37 +233,40 @@ Escher_memmove( void * const dst, const void * const src, u2_t len )
 /*
  * Copy characters and be paranoid about null delimiter.
  */
-void
+c_t *
 Escher_strcpy( c_t * dst, const c_t * src )
 {
+  c_t * s = dst;
   s2_t i = ESCHER_SYS_MAX_STRING_LEN - 1;
-  while ( ( i > 0 ) && ( *src != '\0' ) ) {
-    i--;
-    *dst++ = *src++;
+  if ( ( 0 != src ) && ( 0 != dst ) ) {
+    while ( ( i > 0 ) && ( *src != '\0' ) ) {
+      --i;
+      *dst++ = *src++;
+    }
+    *dst = '\0';  /* Ensure delimiter.  */
   }
-  *dst = '\0';  /* Ensure delimiter.  */
+  return s;
 }
 
 /*
- * Add two strings allowing for commutativity.  Using shared area,
- * so limited to single threaded and simple string expressions.
+ * Add two strings.  Allocate a temporary memory variable to return the value.
  */
 c_t *
 Escher_stradd( const c_t * left, const c_t * right )
 {
-  static c_t sum_area[ ESCHER_SYS_MAX_STRING_LEN ];
-  s2_t i = 0;
-  c_t * dst = sum_area;
-  while ( ( i < ESCHER_SYS_MAX_STRING_LEN - 1 ) && ( *left != '\0' ) ) {
-    ++i;
+  s2_t i = ESCHER_SYS_MAX_STRING_LEN - 1;
+  c_t * s = Escher_strget();
+  c_t * dst = s;
+  while ( ( i > 0 ) && ( *left != '\0' ) ) {
+    --i;
     *dst++ = *left++;
   }
-  while ( ( i < ESCHER_SYS_MAX_STRING_LEN - 1 ) && ( *right != '\0' ) ) {
-    ++i;
+  while ( ( i > 0 ) && ( *right != '\0' ) ) {
+    --i;
     *dst++ = *right++;
   }
-  sum_area[ i ] = '\0';  /* Ensure delimiter.  */
-  return sum_area;
+  *dst = '\0';  /* Ensure delimiter.  */
+  return s;
 }
 
 /*
@@ -288,6 +291,19 @@ Escher_strcmp( const c_t *p1, const c_t *p2 )
   return ( c1 - c2 );
 }
 
+/*
+ * Return a string buffer.  Rotate through a pool.
+ */
+c_t *
+Escher_strget( void )
+{
+  static u1_t i = 0;
+  static c_t s[ 16 ][ ESCHER_SYS_MAX_STRING_LEN ];
+  i = ( i + 1 ) % 16;
+  s[ i ][ 0 ] = 0;
+  return ( &s[ i ][ 0 ] );
+}
+
 
 /* xtUML class info for all of the components (collections, sizes, etc.) */
 Escher_Extent_t * const * const domain_class_info[ SYSTEM_DOMAIN_COUNT ] = {
@@ -310,12 +326,14 @@ Escher_CreateInstance(
   node = dci->inactive.head;
 
   if ( 0 == node ) {
-    UserObjectPoolEmptyCallout( (c_t *) (domain_num+0), (c_t *) (class_num+0) );
+    UserObjectPoolEmptyCallout( domain_num, class_num );
   }
 
   dci->inactive.head = dci->inactive.head->next;
   instance = (Escher_iHandle_t) node->object;
-  instance->current_state = dci->initial_state;
+  if ( 0 != dci->initial_state ) {
+    instance->current_state = dci->initial_state;
+  }
   Escher_SetInsertInstance( &dci->active, node );
   return instance;
 }
@@ -339,7 +357,6 @@ Escher_DeleteInstance(
   Escher_memset( instance, 0, dci->size );
 }
 
-
 /*
  * Initialize object factory services.
  * Initialize class instance storage free pool (inanimate list)
@@ -353,7 +370,7 @@ Escher_ClassFactoryInit(
   Escher_Extent_t * dci = *(domain_class_info[ domain_num ] + class_num);
   if ( 0 != dci ) {
   dci->active.head = 0;
-  dci->inactive.head = Escher_SetInsertBlock( 
+  dci->inactive.head = Escher_SetInsertBlock(
     dci->container,
     (const u1_t *) dci->pool,
     dci->size,
@@ -415,7 +432,7 @@ InitializeOoaEventPool( void )
 Escher_xtUMLEvent_t * Escher_AllocatextUMLEvent( void )
 {
   Escher_xtUMLEvent_t * event = 0;
-  if ( free_event_list == 0 ) {
+  if ( 0 == free_event_list ) {
     UserEventFreeListEmptyCallout();   /* Bad news!  No more events.  */
   } else {
     event = free_event_list;       /* Grab front of the free list.  */
@@ -575,7 +592,7 @@ static void ooa_loop( void )
    */
   static const EventTaker_t * DomainClassDispatcherTable[ 1 ] =
     {
-      MicrowaveOven_EventDispatcher,
+      MicrowaveOven_EventDispatcher
     };
   Escher_xtUMLEvent_t * event;
   /* Start consuming events and dispatching background processes.  */

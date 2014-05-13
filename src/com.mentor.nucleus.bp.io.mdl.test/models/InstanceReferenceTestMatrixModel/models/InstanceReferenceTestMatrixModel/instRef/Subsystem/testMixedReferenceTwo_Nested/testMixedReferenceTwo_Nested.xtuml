@@ -1,4 +1,4 @@
--- BP 7.1 content: ModelClass syschar: 3 persistence-version: 7.1.5
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
 
 INSERT INTO O_OBJ
 	VALUES ("3703a0a9-88db-45d4-9e36-61b161ab496f",
@@ -6,13 +6,13 @@ INSERT INTO O_OBJ
 	18,
 	'MIX2',
 	'',
-	"b8c699da-971a-421b-be92-50dd3d41b58b");
+	"00000000-0000-0000-0000-000000000000");
 INSERT INTO O_TFR
 	VALUES ("f163297c-53e6-4b65-9760-7335ba194f84",
 	"3703a0a9-88db-45d4-9e36-61b161ab496f",
 	'MIX_booleanBinaryOperationLeftOperand',
 	'',
-	"63f91549-9407-42c4-a2c0-fdde2812f080",
+	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'LOG::LogInfo(message:"Operation entered: testMixedReferenceTwo_Nested::MIX_booleanBinaryOperationLeftOperand, Matrix cell : A14 V3 I10");
 select any veh from instances of V;
@@ -41,19 +41,12 @@ end if;
 	1,
 	'',
 	"00000000-0000-0000-0000-000000000000");
-INSERT INTO S_DT_PROXY
-	VALUES ("63f91549-9407-42c4-a2c0-fdde2812f080",
-	"c3928f56-530d-4984-8114-35933dc4cb31",
-	'void',
-	'',
-	'',
-	'../../Datatypes/Datatypes.xtuml');
 INSERT INTO O_TFR
 	VALUES ("a2029a22-ee03-412e-a6f3-8b47dcc66d09",
 	"3703a0a9-88db-45d4-9e36-61b161ab496f",
 	'MIX_booleanBinaryOperationLeftOperandSet',
 	'',
-	"63f91549-9407-42c4-a2c0-fdde2812f080",
+	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'LOG::LogInfo(message:"Operation entered: testMixedReferenceTwo_Nested::MIX_booleanBinaryOperationLeftOperandSet, Matrix cell : A30 V3 I10");
 select many vehs from instances of V;
@@ -80,7 +73,7 @@ INSERT INTO O_TFR
 	"3703a0a9-88db-45d4-9e36-61b161ab496f",
 	'MIX_booleanBinaryOperationRightOperand',
 	'',
-	"63f91549-9407-42c4-a2c0-fdde2812f080",
+	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'LOG::LogInfo(message:"Operation entered: testMixedReferenceTwo_Nested::MIX_booleanBinaryOperationRightOperand, Matrix cell : A15 V3 I10");
 select any veh from instances of V;
@@ -113,7 +106,7 @@ INSERT INTO O_TFR
 	"3703a0a9-88db-45d4-9e36-61b161ab496f",
 	'MIX_booleanBinaryOperationRightOperandSet',
 	'',
-	"63f91549-9407-42c4-a2c0-fdde2812f080",
+	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'LOG::LogInfo(message:"Operation entered: testMixedReferenceTwo_Nested::MIX_booleanBinaryOperationRightOperandSet, Matrix cell : A31 V3 I10");
 
@@ -141,7 +134,7 @@ INSERT INTO O_TFR
 	"3703a0a9-88db-45d4-9e36-61b161ab496f",
 	'MIX_readAttr',
 	'',
-	"63f91549-9407-42c4-a2c0-fdde2812f080",
+	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'LOG::LogInfo(message:"Operation entered: testMixedReferenceTwo_Nested::MIX_readAttir, Matrix cell : A2 V3 I10");
 
@@ -170,7 +163,7 @@ INSERT INTO O_TFR
 	"3703a0a9-88db-45d4-9e36-61b161ab496f",
 	'MIX_WhereClause',
 	'',
-	"63f91549-9407-42c4-a2c0-fdde2812f080",
+	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'LOG::LogInfo(message:"Operation entered: testMixedReferenceTwo_Nested::MIX_WhereClause, Matrix cell : A13 V3 I10");
 select any car from instances of V;
@@ -212,7 +205,7 @@ INSERT INTO O_TFR
 	"3703a0a9-88db-45d4-9e36-61b161ab496f",
 	'MIX_writeAttr',
 	'',
-	"63f91549-9407-42c4-a2c0-fdde2812f080",
+	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'LOG::LogInfo(message:"Operation entered: testMixedReferenceTwo_Nested::MIX_writeAttr, Matrix cell : A19 V3 I10");
 create object instance newCar of V;   
@@ -242,7 +235,7 @@ INSERT INTO O_TFR
 	"3703a0a9-88db-45d4-9e36-61b161ab496f",
 	'MIX_ActivitiesInvocation',
 	'',
-	"63f91549-9407-42c4-a2c0-fdde2812f080",
+	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'LOG::LogInfo(message:"Operation entered: testMixedReferenceOne_Nested::MIX_ActivitiesInvocation, Matrix cell : A36 V3 I10");
 sdt  = self.structReference;
@@ -256,7 +249,7 @@ INSERT INTO O_TFR
 	"3703a0a9-88db-45d4-9e36-61b161ab496f",
 	'MIX_ActivitiesInvocationSet',
 	'',
-	"63f91549-9407-42c4-a2c0-fdde2812f080",
+	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'LOG::LogInfo(message:"Operation entered: testMixedReferenceTwo_Nested::MIX_ActivitiesInvocationSet, Matrix cell : A36 V3 I10");
 sdt  = self.structReference;
@@ -285,7 +278,7 @@ INSERT INTO O_ATTR
 	'');
 INSERT INTO S_DT_PROXY
 	VALUES ("33b45814-e6eb-4d18-8029-c15271ee2ea2",
-	"c3928f56-530d-4984-8114-35933dc4cb31",
+	"00000000-0000-0000-0000-000000000000",
 	'Mixed_SecondChain',
 	'',
 	'',
@@ -299,12 +292,17 @@ INSERT INTO O_ID
 INSERT INTO O_ID
 	VALUES (2,
 	"3703a0a9-88db-45d4-9e36-61b161ab496f");
-INSERT INTO S_SS_PROXY
+INSERT INTO PE_PE
+	VALUES ("3703a0a9-88db-45d4-9e36-61b161ab496f",
+	1,
+	"b8c699da-971a-421b-be92-50dd3d41b58b",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
 	VALUES ("b8c699da-971a-421b-be92-50dd3d41b58b",
+	"00000000-0000-0000-0000-000000000000",
+	"13c14d34-d225-4949-89b6-fe738cc62cbb",
 	'Subsystem',
 	'',
-	'',
 	0,
-	"c3928f56-530d-4984-8114-35933dc4cb31",
-	"00000000-0000-0000-0000-000000000000",
 	'../Subsystem.xtuml');

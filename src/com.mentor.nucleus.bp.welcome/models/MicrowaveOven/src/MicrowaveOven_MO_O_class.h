@@ -4,7 +4,7 @@
  * Class:       Oven  (MO_O)
  * Component:   MicrowaveOven
  *
- * (C) Copyright 1998-2014 Mentor Graphics Corporation.  All rights reserved.
+ * your copyright statement can go here (from te_copyright.body)
  *--------------------------------------------------------------------------*/
 
 #ifndef MICROWAVEOVEN_MO_O_CLASS_H
@@ -31,22 +31,22 @@ struct MicrowaveOven_MO_O {
   i_t remaining_cooking_time;  /* - remaining_cooking_time */
 
   /* relationship storage */
-  MicrowaveOven_MO_MT * MO_MT_R1;
-  MicrowaveOven_MO_IL * MO_IL_R2;
-  MicrowaveOven_MO_B * MO_B_R3;
-  MicrowaveOven_MO_D * MO_D_R4;
-  MicrowaveOven_MO_TRN * MO_TRN_R5;
+  MicrowaveOven_MO_MT * MO_MT_R1_houses;
+  MicrowaveOven_MO_IL * MO_IL_R2_is_illuminated_by;
+  MicrowaveOven_MO_B * MO_B_R3_features;
+  MicrowaveOven_MO_D * MO_D_R4_is_accessed_via;
+  MicrowaveOven_MO_TRN * MO_TRN_R5_has;
 };
 
-extern void MicrowaveOven_MO_O_R1_Link( MicrowaveOven_MO_MT *, MicrowaveOven_MO_O * );
+void MicrowaveOven_MO_O_R1_Link_is_housed_in( MicrowaveOven_MO_MT *, MicrowaveOven_MO_O * );
 /* Note:  MO_MT<-R1->MO_O unrelate accessor not needed */
-extern void MicrowaveOven_MO_O_R2_Link( MicrowaveOven_MO_IL *, MicrowaveOven_MO_O * );
+void MicrowaveOven_MO_O_R2_Link_illuminates( MicrowaveOven_MO_IL *, MicrowaveOven_MO_O * );
 /* Note:  MO_IL<-R2->MO_O unrelate accessor not needed */
-extern void MicrowaveOven_MO_O_R3_Link( MicrowaveOven_MO_B *, MicrowaveOven_MO_O * );
+void MicrowaveOven_MO_O_R3_Link_is_located_in( MicrowaveOven_MO_B *, MicrowaveOven_MO_O * );
 /* Note:  MO_B<-R3->MO_O unrelate accessor not needed */
-extern void MicrowaveOven_MO_O_R4_Link( MicrowaveOven_MO_D *, MicrowaveOven_MO_O * );
+void MicrowaveOven_MO_O_R4_Link_provides_access_to( MicrowaveOven_MO_D *, MicrowaveOven_MO_O * );
 /* Note:  MO_D<-R4->MO_O unrelate accessor not needed */
-extern void MicrowaveOven_MO_O_R5_Link( MicrowaveOven_MO_TRN *, MicrowaveOven_MO_O * );
+void MicrowaveOven_MO_O_R5_Link_occupies( MicrowaveOven_MO_TRN *, MicrowaveOven_MO_O * );
 /* Note:  MO_TRN<-R5->MO_O unrelate accessor not needed */
 
 

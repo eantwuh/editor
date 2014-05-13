@@ -1,4 +1,4 @@
--- BP 7.1 content: ModelClass syschar: 3 persistence-version: 7.1.5
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
 
 INSERT INTO O_OBJ
 	VALUES ("990ce826-d473-4b8e-8621-f78c5d6648af",
@@ -6,13 +6,13 @@ INSERT INTO O_OBJ
 	18,
 	'MBR1',
 	'',
-	"b8c699da-971a-421b-be92-50dd3d41b58b");
+	"00000000-0000-0000-0000-000000000000");
 INSERT INTO O_TFR
 	VALUES ("4a3ffac9-6afe-4252-bee0-b29957aa7ddc",
 	"990ce826-d473-4b8e-8621-f78c5d6648af",
 	'S_MBR_booleanBinaryOperationLeftOperand',
 	'',
-	"63f91549-9407-42c4-a2c0-fdde2812f080",
+	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'LOG::LogInfo(message:"Operation entered: testStructureMember_Direct::S_MBR_booleanBinaryOperationLeftOperand, Matrix cell : A14 V1 I8");
 select any veh from instances of V;
@@ -46,19 +46,12 @@ end if;
 	1,
 	'',
 	"00000000-0000-0000-0000-000000000000");
-INSERT INTO S_DT_PROXY
-	VALUES ("63f91549-9407-42c4-a2c0-fdde2812f080",
-	"c3928f56-530d-4984-8114-35933dc4cb31",
-	'void',
-	'',
-	'',
-	'../../Datatypes/Datatypes.xtuml');
 INSERT INTO O_TFR
 	VALUES ("95b45bc4-6f97-4738-bb8d-4bac6b4e9ab6",
 	"990ce826-d473-4b8e-8621-f78c5d6648af",
 	'S_MBR_booleanBinaryOperationLeftOperandSet',
 	'',
-	"63f91549-9407-42c4-a2c0-fdde2812f080",
+	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'LOG::LogInfo(message:"Operation entered: testStructureMember_Direct::S_MBR_booleanBinaryOperationLeftOperandSet, Matrix cell : A30 V1 I8");
 select many vehs from instances of V;
@@ -90,7 +83,7 @@ INSERT INTO O_TFR
 	"990ce826-d473-4b8e-8621-f78c5d6648af",
 	'S_MBR_booleanBinaryOperationRightOperand',
 	'',
-	"63f91549-9407-42c4-a2c0-fdde2812f080",
+	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'LOG::LogInfo(message:"Operation entered: testStructureMember_Direct::S_MBR_booleanBinaryOperationRightOperand, Matrix cell : A15 V1 I8");
 select any veh from instances of V;
@@ -127,7 +120,7 @@ INSERT INTO O_TFR
 	"990ce826-d473-4b8e-8621-f78c5d6648af",
 	'S_MBR_booleanBinaryOperationRightOperandSet',
 	'',
-	"63f91549-9407-42c4-a2c0-fdde2812f080",
+	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'LOG::LogInfo(message:"Operation entered: testStructureMember_Direct::S_MBR_booleanBinaryOperationRightOperandSet, Matrix cell : A31 V1 I8");
 
@@ -161,7 +154,7 @@ INSERT INTO O_TFR
 	"990ce826-d473-4b8e-8621-f78c5d6648af",
 	'S_MBR_readAttr',
 	'',
-	"63f91549-9407-42c4-a2c0-fdde2812f080",
+	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'LOG::LogInfo(message:"Operation entered: testStructureMember_Direct::S_MBR_readAttir, Matrix cell : A2 V1 I8");
 select any obj from instances of MBR1;
@@ -196,7 +189,7 @@ INSERT INTO O_TFR
 	"990ce826-d473-4b8e-8621-f78c5d6648af",
 	'S_MBR_WhereClause',
 	'',
-	"63f91549-9407-42c4-a2c0-fdde2812f080",
+	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'LOG::LogInfo(message:"Operation entered: testStructureMember_Direct::S_MBR_WhereClause, Matrix cell : A13 V1 I8");
 select any car from instances of V;
@@ -242,7 +235,7 @@ INSERT INTO O_TFR
 	"990ce826-d473-4b8e-8621-f78c5d6648af",
 	'S_MBR_writeAttr',
 	'',
-	"63f91549-9407-42c4-a2c0-fdde2812f080",
+	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'LOG::LogInfo(message:"Operation entered: testStructureMember_Direct::S_MBR_writeAttr, Matrix cell : A19 V1 I8");
 create object instance newCar of V;   
@@ -276,7 +269,7 @@ INSERT INTO O_TFR
 	"990ce826-d473-4b8e-8621-f78c5d6648af",
 	'S_MBR_ActivitiesInvocation',
 	'',
-	"63f91549-9407-42c4-a2c0-fdde2812f080",
+	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'LOG::LogInfo(message:"Operation entered: testStructureMember_Direct::S_MBR_ActivitiesInvocation, Matrix cell : A36 V1 I8");
 
@@ -289,7 +282,7 @@ INSERT INTO O_TFR
 	"990ce826-d473-4b8e-8621-f78c5d6648af",
 	'S_MBR_ActivitiesInvocationSet',
 	'',
-	"63f91549-9407-42c4-a2c0-fdde2812f080",
+	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'LOG::LogInfo(message:"Operation entered: testStructureMember_Direct::S_MBR_ActivitiesInvocationSet, Matrix cell : A36 V1 I8");
 
@@ -317,7 +310,7 @@ INSERT INTO O_ATTR
 	'');
 INSERT INTO S_DT_PROXY
 	VALUES ("12c6ce98-bed9-42d1-b29c-24db4f6a6d4d",
-	"c3928f56-530d-4984-8114-35933dc4cb31",
+	"00000000-0000-0000-0000-000000000000",
 	'InstRef StructureType',
 	'',
 	'',
@@ -331,12 +324,17 @@ INSERT INTO O_ID
 INSERT INTO O_ID
 	VALUES (2,
 	"990ce826-d473-4b8e-8621-f78c5d6648af");
-INSERT INTO S_SS_PROXY
+INSERT INTO PE_PE
+	VALUES ("990ce826-d473-4b8e-8621-f78c5d6648af",
+	1,
+	"b8c699da-971a-421b-be92-50dd3d41b58b",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
 	VALUES ("b8c699da-971a-421b-be92-50dd3d41b58b",
+	"00000000-0000-0000-0000-000000000000",
+	"13c14d34-d225-4949-89b6-fe738cc62cbb",
 	'Subsystem',
 	'',
-	'',
 	0,
-	"c3928f56-530d-4984-8114-35933dc4cb31",
-	"00000000-0000-0000-0000-000000000000",
 	'../Subsystem.xtuml');

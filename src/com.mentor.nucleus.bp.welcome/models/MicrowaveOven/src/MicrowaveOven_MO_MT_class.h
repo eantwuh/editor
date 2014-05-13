@@ -4,7 +4,7 @@
  * Class:       Magnetron Tube  (MO_MT)
  * Component:   MicrowaveOven
  *
- * (C) Copyright 1998-2014 Mentor Graphics Corporation.  All rights reserved.
+ * your copyright statement can go here (from te_copyright.body)
  *--------------------------------------------------------------------------*/
 
 #ifndef MICROWAVEOVEN_MO_MT_CLASS_H
@@ -22,7 +22,7 @@ struct MicrowaveOven_MO_MT {
   Escher_StateNumber_t current_state;
   /* application analysis class attributes */
   Escher_UniqueID_t TubeID;  /* * TubeID */
-  s2_t current_power_output;  /* - current_power_output */
+  MicrowaveOven_tube_wattage_t current_power_output;  /* - current_power_output */
 
   /* relationship storage */
   /* Note:  No storage needed for MO_MT->MO_O[R1] */

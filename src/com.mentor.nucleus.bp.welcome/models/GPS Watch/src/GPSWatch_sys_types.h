@@ -8,8 +8,6 @@
  * System ID:    1
  * Model Compiler Product Information:
  * Product:  
- * Version:  
- * S/N:      
  * System default/colored values:
  * MaxStringLen:  32
  * MaxObjExtent:  0
@@ -27,22 +25,8 @@
  * PersistInstanceCacheDepth:  128
  * PersistLinkCacheDepth:  128
  *
- * Component Name:  HeartRateMonitor
- * MaxObjExtent:  200
- * MaxRelExtent:  0
- * MaxSelectExtent:  200
- * MaxSelfEvents:  2
- * MaxNonSelfEvents:  5
- * MaxPriorityEvents:  0
- * MaxTimers:  4
- * InterleavedBridges:  0
- * PEIClassCount:  0
- * PersistentClassCount:  0
- * InterleavedDataSize:  8
- * CollectionsFlavor:  0
- *
- * Component Name:  Location
- * MaxObjExtent:  200
+ * Component Name:  UI
+ * MaxObjExtent:  400
  * MaxRelExtent:  0
  * MaxSelectExtent:  200
  * MaxSelfEvents:  2
@@ -69,8 +53,22 @@
  * InterleavedDataSize:  8
  * CollectionsFlavor:  0
  *
- * Component Name:  UI
- * MaxObjExtent:  400
+ * Component Name:  Location
+ * MaxObjExtent:  200
+ * MaxRelExtent:  0
+ * MaxSelectExtent:  200
+ * MaxSelfEvents:  2
+ * MaxNonSelfEvents:  5
+ * MaxPriorityEvents:  0
+ * MaxTimers:  4
+ * InterleavedBridges:  0
+ * PEIClassCount:  0
+ * PersistentClassCount:  0
+ * InterleavedDataSize:  8
+ * CollectionsFlavor:  0
+ *
+ * Component Name:  HeartRateMonitor
+ * MaxObjExtent:  200
  * MaxRelExtent:  0
  * MaxSelectExtent:  200
  * MaxSelfEvents:  2
