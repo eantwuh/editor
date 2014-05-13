@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Anti's Example
+Bundle-SymbolicName: org.xtuml.mybuilder.example; singleton:=true
+Bundle-Version: 1.0.0.1
+Bundle-Activator: org.xtuml.mybuilder.example.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ com.mentor.nucleus.bp.core;bundle-version="4.1.7",
+ org.eclipse.ui.console;bundle-version="3.5.100"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
